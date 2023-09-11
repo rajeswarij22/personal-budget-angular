@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Budget</title>
-    <meta name="description" content="A free personal budger app">
-    <meta name="keywords" content="app free budget finance">
+    <!-- SEO Change: Added a descriptive title -->
+    <title>Personal Budget - Manage Your Finances</title>
+    <!-- SEO Change: Added a meta description -->
+    <meta name="description" content="A free personal budget management app for better financial planning.">
+    <!-- SEO Change: Added meta keywords -->
+    <meta name="keywords" content="budget, finance, personal finance, money management">
+    
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -27,48 +31,52 @@
 </header>
 
 
-<!-- Semantic HTML Change: Changed <header> to <main> for main content --->
-<main id="main">
-    <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
-    <section class="hero">
-        <h1>Welcome to Personal Budget</h1>
-        <h2>Your Trusted Personal Finance App</h2>
-    </section>
 
-    <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
-    <section class="page-content">
-        <article>
-            <h1>Track Your Expenses</h1>
-            <p>
-                Discover where your money goes with our expense tracking feature. It's crucial for better financial planning.
-            </p>
-        </article>
+    <!-- Semantic HTML Change: Changed <header> to <main> for main content --->
+    <main id="main">
+        <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
+        <section class="hero">
+            <h1>Welcome to Personal Budget</h1>
+            <h2>Your Trusted Personal Finance App</h2>
+            <!-- A11y Change: Added alt attribute to hero image for screen readers -->
+            <img src="bg.png" alt="Image describing the Personal Budget app" />
 
-        <article>
-            <h1>Set Budget Alerts</h1>
-            <p>
-                Stay on top of your finances by setting budget alerts. Never exceed your spending limits again.
-            </p>
-        </article>
+        </section>
 
-        <article>
-            <h1>Financial Freedom</h1>
-            <p>
-                Achieve financial freedom and happiness by managing your expenses with confidence.
-            </p>
-        </article>
-    </section>
+        <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
+        <section class="page-content">
+            <article>
+                <h1>Track Your Expenses</h1>
+                <p>
+                    Discover where your money goes with our expense tracking feature. It's crucial for better financial planning.
+                </p>
+            </article>
 
-    <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
-    <section class="chart-section">
-        <article>
-            <h1>Expense Chart</h1>
-            <p>
-                <canvas id="myChart" width="400" height="400"></canvas>
-            </p>
-        </article>
-    </section>
-</main>
+            <article>
+                <h1>Set Budget Alerts</h1>
+                <p>
+                    Stay on top of your finances by setting budget alerts. Never exceed your spending limits again.
+                </p>
+            </article>
+
+            <article>
+                <h1>Financial Freedom</h1>
+                <p>
+                    Achieve financial freedom and happiness by managing your expenses with confidence.
+                </p>
+            </article>
+        </section>
+
+        <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
+        <section class="chart-section">
+            <article>
+                <h1>Expense Chart</h1>
+                <p>
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </p>
+            </article>
+        </section>
+    </main>
 
     <footer class="bottom">
         <div class="center">
