@@ -10,171 +10,181 @@
     <!-- SEO Change: Added meta keywords -->
     <meta name="keywords" content="budget, finance, personal finance, money management">
     
+    <!-- Include your CSS files -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
+<!-- Semantic HTML Change: Added a skip link for accessibility -->
 <a href="#main" class="skip">Skip to content</a>
 
-    <!-- Semantic HTML Change: Changed <main> to <header> for better structure -->
-<header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/login.html">Login</a></li>
-            <!-- Semantic HTML Change: Added rel="external" for external link -->
-            <li><a href="https://google.com" rel="external">Google</a></li>
-        </ul>
-    </nav>
-</header>
+<!-- Semantic HTML Change: Changed <header> to <nav> for navigation -->
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/login.html">Login</a></li>
+        <!-- Semantic HTML Change: Added rel="external" for an external link -->
+        <li><a href="https://google.com" rel="external">Google</a></li>
+    </ul>
+</nav>
 
+<!-- Semantic HTML Change: Changed <header> to <main> for main content -->
+<main id="main">
+    <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
+    <section class="hero">
+        <h1>Welcome to Personal Budget</h1>
+        <h2>Your Trusted Personal Finance App</h2>
+        <!-- A11y Change: Added alt attribute to hero image for screen readers -->
+        <img src="bg.png" alt="Image describing the Personal Budget app" />
+    </section>
 
+    <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
+    <section class="page-content">
+        <article>
+            <h1>Track Your Expenses</h1>
+            <p>
+                Discover where your money goes with our expense tracking feature. It's crucial for better financial planning.
+            </p>
+        </article>
 
-    <!-- Semantic HTML Change: Changed <header> to <main> for main content --->
-    <main id="main">
-        <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
-        <section class="hero">
-            <h1>Welcome to Personal Budget</h1>
-            <h2>Your Trusted Personal Finance App</h2>
-            <!-- A11y Change: Added alt attribute to hero image for screen readers -->
-            <img src="bg.png" alt="Image describing the Personal Budget app" />
+        <article>
+            <h1>Set Budget Alerts</h1>
+            <p>
+                Stay on top of your finances by setting budget alerts. Never exceed your spending limits again.
+            </p>
+        </article>
 
-        </section>
+        <article>
+            <h1>Financial Freedom</h1>
+            <p>
+                Achieve financial freedom and happiness by managing your expenses with confidence.
+            </p>
+        </article>
+    </section>
 
-        <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
-        <section class="page-content">
-            <article>
-                <h1>Track Your Expenses</h1>
-                <p>
-                    Discover where your money goes with our expense tracking feature. It's crucial for better financial planning.
-                </p>
-            </article>
+    <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
+    <section class="chart-section">
+        <article>
+            <h1>Chart</h1>
+            <!-- Removed the duplicate canvas with the same id 'myChart' -->
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </article>
+        <!-- D3.js chart container for the bar chart -->
+        <div id="d3-bar-chart" style="width: 400px; height: 400px;"></div>
+    </section>
+</main>
 
-            <article>
-                <h1>Set Budget Alerts</h1>
-                <p>
-                    Stay on top of your finances by setting budget alerts. Never exceed your spending limits again.
-                </p>
-            </article>
-
-            <article>
-                <h1>Financial Freedom</h1>
-                <p>
-                    Achieve financial freedom and happiness by managing your expenses with confidence.
-                </p>
-            </article>
-        </section>
-
-        <!-- Semantic HTML Change: Changed <div> to <section> for better structure -->
-        <section class="chart-section">
-            <article>
-                <h1>Chart</h1>
-                <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </p>
-            </article>
-        </section>
-    </main>
-
-    <footer class="bottom">
-        <div class="center">
-            All rights reserved &copy; Fabio Nolasco
-        </div>
-    </footer>
-
-    <div class="text-box">
-        <h1>Free</h1>
-        <p>
-            <canvas id="myChart" width="400" height="400"> </canvas>
-        </p>
+<footer class="bottom">
+    <div class="center">
+        All rights reserved &copy; Fabio Nolasco
     </div>
+</footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-    
-    <script>
-        var dataSource = {
-                datasets: [
-                    {
-                        data: [],
-                        backgroundColor: [
-                            '#ffcd56',
-                            '#ff6384',
-                            '#36a2eb',
-                            '#fd6b19',
-                        ]
-                    }
-                ],
-                labels: []
-            };
+<div class="text-box">
+    <h1>Free</h1>
+    <!-- Removed the duplicate canvas with the same id 'myChart' -->
+    <canvas id="myChart2" width="400" height="400"></canvas>
+</div>
 
-        function createChart() {
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myPieChart = new Chart(ctx, {
-                type: 'pie',
-                data: dataSource
-            });
-        }
+<!-- Include your JavaScript libraries and scripts here -->
 
-        function getBudget() {
-            axios.get('http://localhost:3000/budget')
+<!-- Include Axios and Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+<!-- Include D3.js -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- Your JavaScript code for Chart.js and D3.js -->
+<script>
+    // ... Your existing code for Chart.js
+// Chart.js code for the first chart
+var dataSource = {
+        datasets: [
+            {
+                data: [],
+                backgroundColor: [
+                    '#ffcd56',
+                    '#ff6384',
+                    '#36a2eb',
+                    '#fd6b19',
+                ]
+            }
+        ],
+        labels: []
+    };
+
+    function createChart() {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: dataSource
+        });
+    }
+
+    function getBudget() {
+        axios.get('http://localhost:3000/budget')
             .then(function (res) {
                 for (var i = 0; i < res.data.myBudget.length; i++) {
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
                     dataSource.labels[i] = res.data.myBudget[i].title;
-                    createChart();
                 }
+                createChart();
             });
-        }
+    }
 
-        getBudget();
-    </script>
+    getBudget();
+    
+    // D3.js code for the new bar chart
+    var data = [
+        { category: "Eat out", budget: 30 },
+        { category: "Rent", budget: 350 },
+        { category: "Grocery", budget: 90 },
+        { category: "Wifi", budget: 53 },
+        { category: "Car Gas", budget: 100 },
+        { category: "TV", budget: 20 },
+        { category: "Phone Bill", budget: 35 }
+    ];
 
+    var svgBar = d3.select("#d3-bar-chart")
+        .append("svg")
+        .attr("width", 400)
+        .attr("height", 400);
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    var margin = { top: 20, right: 20, bottom: 30, left: 40 },
+        width = +svgBar.attr("width") - margin.left - margin.right,
+        height = +svgBar.attr("height") - margin.top - margin.bottom;
 
-<script>
-var dataSource = {
-    datasets: [
-        {
-        data: [],
-        backgroundColor: [
-                            '#ffcd56',
-                            '#ff6384',
-                            '#36a2eb',
-                            '#fd6b19',
-                        ],
-                    }
-    ],
+    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+        y = d3.scaleLinear().rangeRound([height, 0]);
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: []
-};
+    var g = svgBar.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-function createChart() {
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myPieChart = new Chart(ctx, {
-                type: 'pie',
-                data: dataSource
-            });
-        }
+    x.domain(data.map(function (d) { return d.category; }));
+    y.domain([0, d3.max(data, function (d) { return d.budget; })]);
 
-function getBudget() {
-            axios.get('/budget')
-            .then(function (res) {
-                console.log(res);
-                for (var i = 0; i < res.data.length; i++) {
-                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                   data.labels[i] = res.data.myBudget[i].title;
-                //}
-                getBudget();
-            });
-        }
-        createChart();
+    g.append("g")
+        .selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function (d) { return x(d.category); })
+        .attr("y", function (d) { return y(d.budget); })
+        .attr("width", x.bandwidth())
+        .attr("height", function (d) { return height - y(d.budget); });
+
+    g.append("g")
+        .attr("class", "axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    g.append("g")
+        .attr("class", "axis")
+        .call(d3.axisLeft(y).ticks(5));
+
 </script>
-
 </body>
 </html>
